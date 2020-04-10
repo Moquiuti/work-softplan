@@ -1,0 +1,49 @@
+<div class="container">
+  <h2>CADASTRO DE PESSOA <small>Softplan</small></h2>
+
+  <form class="mat-elevation-z24">
+    <div class="mat-grid-tile-header">
+      <h2 class="mat-title">Filtros</h2>
+    </div>
+    <div class="mat-table">
+      <div class="mat-tab-group">
+        <label class="mat-tab-label">Nome: </label>
+        <input [(ngModel)]="nome" name="nome" class="mat-stepper-vertical">
+        <label class="mat-tab-label"> CPF: </label>
+        <input [imask]="{mask: '000.000.000-00'}" [unmask]="true" [(ngModel)]="cpf" name="cpf" class="mat-stepper-vertical">
+        <label class="mat-tab-label"> E-mail: </label>
+        <input [(ngModel)]="email" name="email" class="mat-stepper-vertical">
+        <label class="mat-tab-label"> Data Nasc.: </label>
+        <input class="mat-icon" [(ngModel)]="nascimento" name="nascimento" type="date" class="mat-stepper-vertical">
+        <img src="assets/images/calendar.png">
+      </div>
+
+      <button class="mat-button mat-background-primary" [routerLink]="['/cadastro']" type="button">Cadastrar Novo</button>
+      <button class="mat-button" type="submit" (click)="byQuery()"><img src="assets/images/search.png"></button>
+    </div>
+  </form>
+
+  <ul class="responsive-table" *ngIf="pessoas">
+    <li class="table-header">
+      <div class="col col-3">Nome</div>
+      <div class="col col-1">CPF</div>
+      <div class="col col-2">Email</div>
+      <div class="col col-1">Data Nasc.</div>
+      <div class="col col-1">#</div>
+    </li>
+
+    <li class="table-row" *ngFor="let item of pessoas">
+      <div class="col col-3">{{item.nome}}</div>
+      <div class="col col-1">{{item.cpf | customCpf}}</div>
+      <div class="col col-2">{{item.email}}</div>
+      <div class="col col-1">{{item.nascimento | customDate}}</div>
+      <div class="col col-1">
+        <button (click)="editar(item.id)" [routerLink]="['/pessoa', item.id]" type="button"><img
+          src="assets/images/edit.png"></button>
+        <button (click)="remover(item.id)" type="button"><img
+          src="assets/images/trash.png"></button>
+      </div>
+    </li>
+  </ul>
+</div>
+

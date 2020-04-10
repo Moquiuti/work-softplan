@@ -1,0 +1,11 @@
+br\com\softplan\aplication\entidades\Imagem$ImagemBuilder.class
+br\com\softplan\aplication\util\Removedor.class
+br\com\softplan\aplication\util\ImagemUtil.class
+br\com\softplan\aplication\entidades\Pessoa.class
+br\com\softplan\aplication\PessoaApplication.class
+br\com\softplan\aplication\util\Validador.class
+br\com\softplan\aplication\entidades\Pessoa$PessoaBuilder.class
+br\com\softplan\aplication\as\PessoaAS.class
+br\com\softplan\aplication\entidades\Imagem.class
+br\com\softplan\aplication\repostory\PessoaRepository.class
+br\com\softplan\aplication\resources\PessoaResource.class

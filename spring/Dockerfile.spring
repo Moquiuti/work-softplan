@@ -1,0 +1,5 @@
+FROM openjdk:14
+VOLUME /tmp
+ADD target/spring.jar spring.jar
+EXPOSE 8081
+ENTRYPOINT ["java","-jar","spring.jar"]

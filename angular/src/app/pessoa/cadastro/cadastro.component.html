@@ -1,0 +1,36 @@
+<div class="container">
+  <h2>CADASTRO DE PESSOA <small>Softplan</small></h2>
+
+  <div class="row">
+    <div class="col-12 col-md-3">
+      <a class="btn btn-sm btn-secondary btn-block" (click)="fileInput.click()">
+        <img src="assets/images/noimage.png" *ngIf="model.imagem.base64 == null">
+        <img *ngIf="model.imagem && model.imagem.base64" [src]="model.imagem.base64" [alt]="model.imagem.titulo"
+             class="image" height="140px">
+        <input #fileInput type='file' (change)="onSelectFile($event)" style="display:none;">
+      </a>
+      <span *ngIf="model.imagem.base64 == null">Insira sua Imagem (.jpg .png .bmp) Tam. max 1mb</span>
+      <span *ngIf="model.imagem && model.imagem.base64">{{model.imagem.titulo}}</span>
+      <img *ngIf="model.imagem && model.imagem.base64" src="assets/images/trash.png" (click)="removerImg(model.imagem)"
+           title="Remover"/>
+    </div>
+  </div>
+  <div class="mat-table">
+    <div class="mat-tab-group">
+      <label class="mat-tab-label">Nome: <span style="color: red; font-weight: bold; ">*  </span></label>
+      <input [(ngModel)]="model.nome" name="nome" class="mat-stepper-vertical">
+      <label class="mat-tab-label"> CPF: <span style="color: red; font-weight: bold; ">*  </span></label>
+      <input [imask]="{mask: '000.000.000-00'}" [unmask]="true" [(ngModel)]="model.cpf" name="cpf"
+             class="mat-stepper-vertical">
+      <label class="mat-tab-label"> E-mail: <span style="color: red; font-weight: bold; ">*  </span></label>
+      <input [(ngModel)]="model.email" name="email" class="mat-stepper-vertical">
+      <label class="mat-tab-label"> Data Nasc.: <span style="color: red; font-weight: bold; ">*  </span></label>
+      <input class="mat-icon" [(ngModel)]="model.nascimento" name="nascimento" type="date" class="mat-stepper-vertical">
+      <img src="assets/images/calendar.png">
+    </div>
+  </div>
+  <button [routerLink]="['/pessoa']" type="button"><img src="assets/images/return.png"></button>
+  <button type="submit" class="pure-button pure-button-primary" (click)="cadastrar()"><img
+    src="assets/images/accept.png"></button>
+</div>
+
