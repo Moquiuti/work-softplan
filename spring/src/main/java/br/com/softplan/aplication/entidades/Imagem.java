@@ -25,7 +25,7 @@ public class Imagem implements Serializable {
     @Column(name = "id")
     private Long id;
 
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     @Column(name = "datacadastro")
     private Date dataCadastro;
 
@@ -35,7 +35,7 @@ public class Imagem implements Serializable {
     @Column(name = "tamanho")
     private String tamanho;
 
-    @Column(name = "base64")
+    @Column(name = "base64", columnDefinition="TEXT")
     private String base64;
 
 }
