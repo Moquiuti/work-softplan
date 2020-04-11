@@ -6,6 +6,36 @@ integração, interfaces web, interfaces mobile, etc. Então as regras e requisi
 que isso seja possível. Além disso, é preciso também levar em consideração que esse módulo ou micro serviço deve ser 
 altamente escalável de maneira simples. Também, a aplicação deve está preparada para internacionalização.
 
+## Requisitos
+Pessoa
+* Consultar
+> * usuário pode consultar as pessoas de maneira paginada
+> * usuário pode consultar pessoas com os seguintes filtros:
+> > * Nome
+> > * Cpf (formatado e não formatado)
+> > * Data de nascimento
+> > * E-mail
+> > * usuário pode editar o registro a partir do resultado da consulta
+> > * usuário pode remover o registro a partir do resultado da consulta
+* Cadastrar, Editar
+> * O usuário pode cadastrar/editar pessoa, informando os seguintes dados:
+> > * Nome
+> > * Cpf
+> > * E-mail
+> > * Foto
+> > * Data de Nascimento
+> * Ao cadastrar/editar pessoa, o sistema deve validar as seguintes informações:
+> > * Nome obrigatório
+> > * Nome deve possuir no máximo 150 caracteres
+> > * Cpf obrigatório
+> > * Cpf deve ser um cpf válido
+> > * E-mail obrigatório
+> > * E-mail deve ser um e-mail válido
+> > * E-mail deve possuir no máximo 400 caracteres
+> > * Cpf não pode ser duplicado, ou seja, não pode ser cadastrado dois responsáveis com o mesmo cpf
+> > * Arquivo da foto não deve ter mais de 1mb de tamanho
+> > * Arquivo da foto deve ter extensão de imagem válida (png, bmp, jpeg, etc)
+
 ## Pré-Requisitos
 
 Necessário ter o [docker](https://docs.docker.com/) instalado na máquina;
@@ -30,6 +60,7 @@ http://localhost:4200/
 * [Maven](https://maven.apache.org/) - Gerenciamento de Dependências
 * [JAVA 14](https://www.oracle.com/java/technologies/javase-downloads.html#JDK14) - Linguagem de Codificação do Backend
 * [Angular CLI: 8.3.5](https://www.npmjs.com/package/@angular/cli/v/8.3.5) - Linguagem de Codificação do Frontend
+* [Postgresql](https://www.postgresql.org/download/) - Banco de Dados
 
 
 ## Contribuição
