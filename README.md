@@ -54,6 +54,26 @@ pressionar enter e aguardar o ambiente ser preparado, quando finalizado, acessar
 http://localhost:4200/
 ```
 
+Ao acessar o link do pgadmin: 
+
+```
+http://localhost:16543/
+```
+
+E não encontrar o server criado não se preocupe, mesmo que já tenha executado alguma ação de inserção!
+Vamos lá... 
+Basta clicar com o botão direito sobre **Serves** e na opção **Create** selecionar **Server...**
+1. Na aba **General**: 
+> * no campo **Name** insira: _postgres_ .
+2. Na aba **Connection**
+> * No campo **Hostname/address** insira: _postgres_
+> * No campo **Username** insira: _postgres_
+> *	No campo **Password** insira: _postgresql_
+> * pressione **Enter** 
+
+Pronto! já será possível identificar dentro do schema public do banco as tabelas criadas, e mesmo que já tenha inserido valores
+antes desse procedimento os valores já estarão lá.
+
 ## Construído com 
 
 * [Spring](https://start.spring.io/) - Criação da estrutura do Backend
