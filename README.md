@@ -60,6 +60,11 @@ Ao acessar o link do pgadmin:
 http://localhost:16543/
 ```
 
+> Usuário: leandro.moquiuti@gmail.com
+
+> Senha: postgresql
+
+
 E não encontrar o server criado não se preocupe, mesmo que já tenha executado alguma ação de inserção!
 Vamos lá... 
 Basta clicar com o botão direito sobre **Serves** e na opção **Create** selecionar **Server...**
